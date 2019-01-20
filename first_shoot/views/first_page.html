@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrap/css/bootstrap.css"/>
+		<style type="text/css">
+		   #myCarousel{
+		   	 /*width:950px;/*图片自适应的父容器的宽*/*/
+                height:512px;/*图片自适应的父容器的高*/
+               margin: 0 auto;
+		   } 
+		 
+		
+               .mybanner img{
+               	width:100%;
+               	height:100%;
+               }
+	       .introduction{
+	       	text-align: center;
+	       /*font:collegiate-normal bold 12px/50px arial,sans-serif;*/
+	       margin-left: 300px;
+	       margin-right: 300px;
+	       }
+	       .orange{
+	       	color: orange;
+	       }
+	       .grey{
+	       	color: grey;
+	       }
+	       #advice{
+	       	text-align: center;
+	       }
+	       #myBackground{
+	       	width: 100%;
+	       	height:600px;
+	        background: url('../img/bg1.jpg') no-repeat center/cover;
+            /*background-attachment: scroll（默认） fixed*/
+            background-attachment: fixed;
+	       }
+	        #myBackground1{
+	       	width: 100%;
+	       	height:600px;
+	        background: url('../img/bg2.jpg') no-repeat center/cover;
+            /*background-attachment: scroll（默认） fixed*/
+            background-attachment: fixed;
+	       }
+	
+	       a{
+	       	text-decoration: none;
+	       }
+	       p{
+	       	text-indent:20px;
+	       	font-size: 18px;
+	       	letter-spacing:3px;
+	       }
+	       .contact{
+	       	text-align: center;
+	       }
+	       
+	       /*begin*/
+.qq_footer{
+    height: 250px;
+    background: #333;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 50px;
+    color: #666;
+}
+.plats{
+    width: 800px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+.plats a {
+    float: left;
+    background: transparent url('../img/footer.png') no-repeat 10px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding-top: 50px;
+    width: 80px;
+    margin: 0 60px;
+}
+.plats a:hover {
+    color: #12b7f5;
+}
+.plats a.plmb {
+    background-position: 0 0;
+}
+.plats a.plmb:hover {
+    background-position: 0 -93px;
+}
+.plats a.plpc {
+    background-position: -105px 0;
+}
+.plats a.plpc:hover {
+    background-position: -105px -93px;
+}
+.plats a.plmac {
+    background-position: -210px 0;
+}
+.plats a.plmac:hover {
+    background-position: -210px -93px;
+}
+.plats a.plpad {
+    background-position: -326px 0;
+}
+.plats a.plpad:hover {
+    background-position: -326px -93px;
+} 
+/*footerend*/
+.address a:hover{
+	background: orange;
+}
+
+/*导航的样式如下:*/
+            .navbar-default {
+				background: #333;
+				/*border-color: #FF6600;*/
+				height: 55px;
+			}
+			
+			.navbar-brand .navbar-nav> a {
+				color: white;
+			}
+			
+			.navbar-default .navbar-nav> li> a {
+				color: white;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<!--导航begin-->
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+				            <span class="sr-only">切换导航</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+							<a class="navbar-brand" href="#" style="color: white;">图灵摄影</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav navbar-right">
+
+								<li>
+									<a href="#">Turing主页</a>
+								</li>
+								<li>
+									<a href="#">摄影服务</a>
+								</li>
+								<li>
+									<a href="#">线上商城</a>
+								</li>
+								<li>
+									<a href="#">影像画廊 </a>
+								</li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										个人中心 <b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal001">
+												</span>登录</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal002">
+												</span>注册</a>
+										</li>
+
+										<li class="divider"></li>
+										<li>
+											<a href="#">帮助？</a>
+										</li>
+
+									</ul>
+								</li>
+								<li><img src="../img/logo.png" style="width: 50px;height: 50px;border-radius: 50%;"></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--导航end-->
+		
+		<!--轮播begin-->
+		<div class="container-fluid">
+			<div class="row">
+				<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+       <ol class="carousel-indicators">
+           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+           <li data-target="#myCarousel" data-slide-to="1"></li>
+           <li data-target="#myCarousel" data-slide-to="2"></li>
+       </ol>   
+    <!-- 轮播（Carousel）项目 -->
+       <div class="carousel-inner mybanner">
+           <div class="item active">
+               <img src="../img/women_05.jpg" alt="First slide">
+           </div>
+           <div class="item">
+               <img src="../img/women_02.jpg" alt="Second slide">
+           </div>
+           <div class="item">
+               <img src="../img/women_03.jpg" alt="Third slide">
+           </div>
+       </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" 
+       data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+    <a class="carousel-control right" href="#myCarousel" 
+       data-slide="next">&rsaquo;</a>
+</div>
+<!--轮播end-->
+			</div>
+		</div>
+		
+		
+		<!--图片背景‘begin-->
+<!--  <div id="myBackground2"></div>-->
+<!--图片背景end-->
+		
+		
+		<!--介绍我们begin-->
+		    <!--介绍文字-->
+		    <div class="introduction">
+		    	<h1 >关于<span class="orange">我们</span></h1> <span class="orange"> About Us</span>
+		    	<p>
+		    	无论你是哪种群体，1502都想传达一种生活态度：“无畏的创意，让你做自己的精神领袖。1502秉承“服务小众，高端品质”的做事理念，<span class="grey">直接明确目标客户群体，专为具有艺术气质、追求品位、高素质、个性鲜明的群体服务。 “小众”与“高品质”决定了1502</span>不同于平常的“婚纱影楼”和一般的摄影工作室。<br>小批量的生产避免大批量的流水化作业， 面对小众保证了拍摄水准，<span class="grey">保证了高品质的后期产品。</span>
+		    	</p>
+		        <p>
+                              来到这里的人不会感到生硬的、<span class="grey">谄媚的推销，只有两种可能：一是有一种找到同仁一样的惊喜，放心</span>地将自己的人生大片交给1502摄影机构。二是话不投机不对路，依旧喜欢传统影楼方式，礼貌地离开。
+		    	</p>
+		    </div>
+		    <!--图片模板-->
+		    <div id="myBackground">
+		    	
+			</div>
+		    <!--联系我们-->
+		    <div class="address">
+		    	<div class="contact">
+		    	<h1 >联系<span class="orange">我们</span></h1> <span class="orange"> Contact Us</span><br>
+		    	<span class="grey"> 全球门店地址，请联系我们</span>
+		    	<!--全球门店地址开始：-->
+		    	
+		    	<div class="container-fluid">
+				
+<div class="row">
+    <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/1.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/2.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/3.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/4.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+     <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/5.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+     <div class="col-sm-6 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="../img/6.png"
+                 alt="通用的占位符缩略图">
+        </a>
+    </div>
+</div>	         
+			     </div>
+		  
+		    	<!--全球门店地址结束-->
+		    	</div>
+		    </div>
+		<!--介绍我们end-->
+		   
+		   
+		   
+<!--图片背景‘begin-->
+  <div id="myBackground1"></div>
+<!--图片背景end-->
+		
+		<!--建以投诉begin-->
+		<div id="advice">
+		    	<h1 >给我们提供<span class="orange">投诉建议</span></h1> <span class="orange"> Advice Us</span><br>
+<div class="form-content container-fluid">
+	    	
+<div class="field field-check-box col-sm-12 required" data-api-code="field_2" data-type="CheckBox" data-label="您对我们的服务满意吗？" data-validations="[&quot;Presence&quot;]" data-field-type="check-box">
+                
+
+<div class="form-group">
+      
+            您对我们的服务满意吗？<br>
+  <div class="choices" >
+          
+            <div class="check-box-wrapper"><input type="checkbox"  class="field-transformed"></div>
+            <div class="choice-description">
+              非常满意
+            </div>
+         
+            <div class="check-box-wrapper"><input type="checkbox" class="field-transformed"></div>
+            <div class="choice-description">
+              满意
+            </div>
+         
+            <div class="check-box-wrapper"><input type="checkbox"  class="field-transformed"></div>
+            <div class="choice-description">
+              一般
+            </div>
+          
+            <div class="check-box-wrapper"><input type="checkbox"  class="field-transformed"></div>
+            <div class="choice-description">
+              不满意
+            </div>
+          
+            <div class="check-box-wrapper"><input type="checkbox"  class="field-transformed"></div>
+            <div class="choice-description">
+              非常不满意
+            </div>
+          
+  </div>
+</div>
+</div>    
+<!--满意end-->
+
+
+
+
+
+   <!--建以begin-->
+<div class="form-group">
+      <div class="field-label-container" onclick="">
+            您希望给我们提出的建议是？（流程各环节或某些人员让您不满意的请告诉我们哦） 
+      </div>
+      <div class="field-content">
+        <textarea rows="3"   style="overflow: hidden;  height: 65px;"></textarea>
+      </div>
+</div>
+<!--建议end-->
+
+       
+<!--联系begin-->
+<div class="form-group">   
+        <label class="field-label" for="entry_field_7"><span class="field-number-label"></span>  希望获得联系</label>
+</div>
+<div class="field-content">
+<div class="field-description clearfix collapse-details"><p>如果您希望我们联系您，可以留下您的手机号，收到反馈第一时间联系</p>
+</div>
+</div>
+            
+
+<div class="form-group">   
+            姓名
+</div>
+<div class="field-content">
+<div class="gd-input-container"><input class="input-with-icon enhanced-input"  type="text"  ></div>
+</div>
+
+            
+
+<div class="form-group">    
+            手机
+</div>
+<div class="field-content">
+<div class="gd-input-container"><input value="true" type="text"></div>
+</div>
+
+
+</div>
+<!--按钮begin-->
+
+
+<div class="">
+        <input type="submit" name="commit" value="提交" data-disabled-with="" class="submit">
+        <a target="_blank" class="" href="">举报</a>
+</div>
+
+</div>
+
+		<!--建议投诉end-->
+  
+  
+  
+  
+  
+  
+     <!--尾部begin-->
+   <footer class="qq_footer">
+       <!--<div class="content">-->        
+            <div class="plats">
+                <a class="plmb" href="#" target="_blank"> 手机版</a>
+                <a class="plpc" href="#" target="_blank"> PC版</a>
+                <a class="plmac" href="#" target="_blank">iphone版</a>
+                <a class="plpad" href="#" target="_blank"> pad版</a>
+            </div>
+            <span>邮箱地址：1061501196@qq.com</span> <br>
+            <span >
+            	投诉热线：17854266864
+            </span>
+    <!--</div>-->
+</footer>
+     <!--尾部end-->
+		
+		
+		<!--引入jquery-->
+		<script type="text/javascript" src="../plugins/jquery/jquery.min.js" ></script>
+		<!--引入bootstrap.js-->
+		<script type="text/javascript" src="../plugins/bootstrap/js/bootstrap.js" ></script>
+		<script type="text/javascript">
+			 $(function() {
+		                $("img.lazy").laszyload({effect: "fadeIn"});
+		          });
+		     $(function(){
+					    $('#myCarousel').carousel({interval:2000});
+				});
+		</script>
+	</body>
+	
+</html>
+
