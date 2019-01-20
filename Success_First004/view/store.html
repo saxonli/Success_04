@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>商品购买页面</title>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrap/css/bootstrap.min.css" />
+	
+	
+		<style>
+		.navbar-default {
+				background: #666666;
+				/*border-color: #FF6600;*/
+				height: 55px;
+			}
+			
+			.navbar-brand .navbar-nav> a {
+				color: white;
+			}
+			
+			.navbar-default .navbar-nav> li> a {
+				color: white;
+			}
+			.daohang {
+				height: 150px;
+				background-color: #122B40;
+			}
+			
+			body {
+				background: #666666;
+			}
+			
+			.shangpin {
+				border-radius: 15px;
+				margin: 2% 3%;
+				padding: 0%;
+				background-color: #ff5500;
+				float: left;
+				text-align: center;
+				opacity: 1;
+				/*height: 300px;*/
+				/*width: 450px;*/
+				/*border: 2px solid red;*/
+			}
+			
+			.h1 {
+				font-family: "楷体";
+				color: #444444;
+				font-size: xx-large;
+				font-weight: bold;
+				text-decoration: underline;
+				/*border-bottom: 1px solid #007AFF;*/
+			}
+			li {
+				font-size: large;
+				text-align: left;
+				font-weight: bold;
+				color: #444440s;
+			}
+			
+			.btn_1{
+				
+				position: absolute;
+				top: 220px;
+				left: 120px;
+				z-index: 2;
+				opacity: 0;
+				background-color: #333333;
+				color: #9ACFEA;
+				font-size: 20px;
+				border-radius: 12px;
+				-webkit-transition-duration: 0.4s;
+				transition-duration: 0.4s;
+				width: 150px;
+				height: 40px;
+				/*border: 2px solid #122B40;*/
+			}
+			
+			
+			.innertext {
+				white-space: nowrap;
+				position: absolute;
+				margin: 0 auto;
+				line-height: 200%;
+				opacity: 0;
+				/*-webkit-transition-duration: 1s;*/
+				transition-duration: 1s;
+				/*border: 1px solid red;*/
+				/*top: 5px;
+				left: 15px;*/
+				/*background: ;*/
+				/*font-size: px;*/
+			}
+			.shangpin:hover img {
+				opacity: 0.05;
+			}
+			
+			.shangpin:hover .innertext {
+				opacity: 1;
+				color: #000000;
+				/*text-align: justify;*/
+				/*font-size: medium;*/
+				/*font-weight: normal;*/
+				/*font-family: "微软雅黑";*/
+			}
+			.shangpin:hover .btn_1{
+				opacity: 0.8;
+				/*text-align: justify;*/
+				/*color: #000000;*/
+				/*font-size: medium;*/
+				/*font-weight: normal;*/
+				/*font-family: "微软雅黑";*/
+			}
+			.btn_1:hover{
+				opacity: 1;
+				background-color: #286090;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--导航begin-->
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+				            <span class="sr-only">切换导航</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+							<a class="navbar-brand" href="#" style="color: white;">图灵摄影</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav navbar-right">
+
+								<li>
+									<a href="#">Turing主页</a>
+								</li>
+								<li>
+									<a href="#">摄影服务</a>
+								</li>
+								<li>
+									<a href="#">线上商城</a>
+								</li>
+								<li>
+									<a href="#">影像画廊 </a>
+								</li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										个人中心 <b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal001">
+												</span>登录</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal002">
+												</span>注册</a>
+										</li>
+
+										<li class="divider"></li>
+										<li>
+											<a href="#">帮助？</a>
+										</li>
+
+									</ul>
+								</li>
+								<li><img src="../../img/logo.png" style="width: 50px;height: 50px;border-radius: 50%;"></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--导航end-->
+
+		<!--<div class="daohang"></div>-->
+		<div style="height: 100px; border: 0px solid green;"></div>
+		<div class="col-lg-offset-1 col-lg-11 col-md-11">
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">相片滤镜</div>
+					<div class="">
+						<ol>
+							<li>品牌:LEE李滤镜</li>
+							<li>滤镜类型:插片滤镜</li>
+							<li>型号:100mm系统接环</li>
+							<li>卡口尺寸:其他</li>
+						</ol>
+					</div>
+				</div>
+				<!--查看查看价格-->
+				<button type="button" class="btn_1"  data-toggle="popover" title="¥330.00">查看价格</button>
+				<img src="../img/相片滤镜.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">索尼4D对焦</div>
+					<div class="">
+						<ol>
+							<li>品牌名称::Sony/索尼</li>
+							<li>存储类型::MS卡 SD卡 TF(microSD)卡</li>
+							<li>快门类型::电子快门</li>
+							<li>索尼单电系列::LCE-6300M</li>
+							<li>像素:约2420万有效像素</li>
+							<li>感光元件类型:APS-C</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button type="button" class="btn_1"  data-toggle="popover" title="¥ 7499.00">查看价格</button>
+				<img src="../img/索尼4D对焦.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">索尼手机</div>
+					<div class="">
+						<ol>
+							<li>品牌名称::Sony/索尼</li>
+							<li>索尼型号:Xperia XZ2 Premium</li>
+							<li>电池类型:不可拆卸式电池</li>
+							<li>核心数:八核</li>
+							<li>操作系统:Android/安卓</li>
+							<li>CPU型号:骁龙845</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥ 4999.00">查看价格</button>
+				<img src="../img/索尼智能手机.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">镜头</div>
+					<div class="">
+						<ol>
+							<li>镜头品牌:Sony/索尼</li>
+							<li>型号: E 50MM F1.8 OSS</li>
+							<li>镜头卡口: E卡口</li>
+							<li>拍摄场景: 人物</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥ 1600.00">查看价格</button>
+				<img src="../img/索尼镜头.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">相机包</div>
+					<div class="">
+						<ol>
+							<li>品牌:索尼</li>
+							<li>款式: 多用设计</li>
+							<li>材质: 锦纶</li>
+							<li>风格: 简约</li>
+							<li>生产企业: 索尼公司</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥130.00">查看价格</button>
+				<img src="../img/索尼相机包.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">存储卡</div>
+					<div class="">
+						<ol>
+							<li>产品名称：Sony/索尼 SF-32UX2</li>
+							<li>存储类型: SD卡内存容量: 32GB</li>
+							<li>型号: SF-32UX2</li>
+							<li>套餐类型: 官方标配</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥ 359.00">查看价格</button>
+				<img src="../img/索尼存储卡.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">索尼超长焦黑卡</div>
+					<div class="">
+						<ol>
+							<li>感光元件类型: CMOS</li>
+							<li>特殊功能: 光学防抖 长焦</li>
+							<li>显示屏尺寸: 3英寸</li>
+							<li>储存介质: SD卡 MS卡</li>
+							<li>有效像素: 2000万以上</li>
+							
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥8899.00">查看价格</button>
+				<img src="../img/索尼超长焦黑卡.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">索尼随身投影</div>
+					<div class="">
+						<ol>
+							<li>品牌: Sony/索尼</li>
+							<li>索尼型号: HDR-PJ410</li>
+							<li>存储介质: 闪存式DV</li>
+							<li>传感器尺寸: 1/5.8英寸</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥ 2580.00">查看价格</button>
+				<img src="../img/索尼随身投影.jpg" class="img-responsive img-rounded" />
+			</div>
+			<div class="col-lg-3 shangpin">
+				<div class="innertext col-lg-10">
+					<div class="h1">相机屏膜</div>
+					<div class="">
+						<ol>
+							<li>品牌: Sony/索尼</li>
+							<li>型号: PCK-LM16</li>
+							<li>货号: PCK-LM16</li>
+							<li>尺寸: 3.0英寸</li>
+						</ol>
+					</div>
+
+				</div>
+				<!--查看查看价格-->
+				<button class="btn_1" type="button" class="btn_1"  data-toggle="popover" title="¥ 100.00">查看价格</button>
+				<img src="../img/索尼相机屏膜.jpg" class="img-responsive" />
+			</div>
+		</div>
+			<!--引入jquery-->
+		<script type="text/javascript" src="../plugins/jquery/jquery.min.js"></script>
+		<!--引入bootstrap.js-->
+		<script type="text/javascript" src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<!--<script type="text/javascript" src="../plugins/bootstrap/js/bootstrap-popover.js" ></script>
+		<script type="text/javascript" src="../plugins/bootstrap/js/bootstrap-tooltip.js" ></script>-->
+		<script>
+			$(function(){
+				$("[data-toggle='popover']").popover();
+			});
+		</script>
+		
+	</body>
+
+</html>
