@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="产品摄影 " />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrap/css/bootstrap.css" />
+
+		<style type="text/css">
+			#myImg1 {
+				border-radius: 5px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			#myImg2 {
+				border-radius: 5px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			#myImg3 {
+				border-radius: 5px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			
+			#myImg1:hover {
+				opacity: 0.7;
+			}
+			#myImg2:hover {
+				opacity: 0.7;
+			}
+			#myImg3:hover {
+				opacity: 0.7;
+			}
+			/* The Modal (background) */
+			
+			.modal {
+				display: none;
+				/* Hidden by default */
+				position: fixed;
+				/* Stay in place */
+				z-index: 1;
+				/* Sit on top */
+				padding-top: 100px;
+				/* Location of the box */
+				left: 0;
+				top: 0;
+				width: 100%;
+				/* Full width */
+				height: 100%;
+				/* Full height */
+				overflow: auto;
+				/* Enable scroll if needed */
+				background-color: rgb(0, 0, 0);
+				/* Fallback color */
+				background-color: rgba(0, 0, 0, 0.9);
+				/* Black w/ opacity */
+			}
+			/* Modal Content (image) */
+			
+			.modal-content {
+				margin: auto;
+				display: block;
+				width: 80%;
+				max-width: 10000px;
+			}
+			/* Caption of Modal Image */
+			
+			#caption1 {
+				margin: auto;
+				display: block;
+				width: 80%;
+				max-width: 700px;
+				text-align: center;
+				color: #ccc;
+				padding: 10px 0;
+				height: 150px;
+			}
+			#caption2 {
+				margin: auto;
+				display: block;
+				width: 80%;
+				max-width: 700px;
+				text-align: center;
+				color: #ccc;
+				padding: 10px 0;
+				height: 150px;
+			}
+			#caption3 {
+				margin: auto;
+				display: block;
+				width: 80%;
+				max-width: 700px;
+				text-align: center;
+				color: #ccc;
+				padding: 10px 0;
+				height: 150px;
+			}
+			/* Add Animation */
+			
+			.modal-content,
+			#caption1,#caption2,#caption3 {
+				-webkit-animation-name: zoom;
+				-webkit-animation-duration: 0.6s;
+				animation-name: zoom;
+				animation-duration: 0.6s;
+			}
+			
+			@-webkit-keyframes zoom {
+				from {
+					-webkit-transform: scale(0)
+				}
+				to {
+					-webkit-transform: scale(1)
+				}
+			}
+			
+			@keyframes zoom {
+				from {
+					transform: scale(0.1)
+				}
+				to {
+					transform: scale(1)
+				}
+			}
+			/* The Close Button */
+			
+			.close {
+				position: absolute;
+				top: 15px;
+				right: 35px;
+				color: #f1f1f1;
+				font-size: 10%px;
+				font-weight: bold;
+				transition: 0.3s;
+			}
+			
+			.close:hover,
+			.close:focus {
+				color: #bbb;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			/* 100% Image Width on Smaller Screens */
+			
+			@media only screen and (max-width: 700px) {
+				.modal-content {
+					width: 100%;
+					/*height: auto;*/
+				}
+			}
+			/*======================================================================================*/
+			/*响应式图册*/
+			
+			.desc {
+				padding: 0px;
+				font-size: 30px;
+				font-family: "微软雅黑";
+				text-align: center;
+				/*text-align: center;*/
+			}
+			
+			/*相册标题*/
+			
+			.define {
+				text-align: left;
+				padding: 0% 15% ;
+				border: % solid transparent;
+				font-family: "微软雅黑";
+				font-size: 13px;
+			}
+			/*卡片居中,阴影*/
+			
+			.imgalbum {
+				/*display: block;
+				margin: auto;*/
+				width: 50%;
+				height: 30%;
+				background-color: white;
+				box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+				/*margin-bottom: 40px;*/
+				margin-right:%10 ;
+				
+				/*left: 40%;*/
+				/*position:absolute;*/
+				float:right;
+			}
+			
+			/*.bodyimgalbum{
+				background-image:url(../img/company.jpg) ;
+				background-repeat: no-repeat;
+				background-position: right-top;
+				margin-right: 30%;
+			}*/
+			/*背景图*/
+			
+			.contentback {
+				background-image: url(../img/background.png)/*,url(../img/background11.png)*/;
+				/*background-position: right top, left top;*/
+				background-repeat: no-repeat/*,repeat-y*/;
+				background-size: 100% auto;
+			}
+			
+			.img {
+				position: relative;
+				width: 100%;
+				height: auto;
+				left: 0px;
+				/*opacity: 0.3;*/
+				text-align: center;
+				font-size: 18px;
+				width: 100%;
+				height: auto;
+				text-align: center;
+				font-size: 18px;
+			}
+			/*=========================================================================================*/
+			
+			
+			
+			.center {
+				margin: auto;
+				width: 60%;
+				/*border: 3px solid #73AD21;
+				padding: 10px;*/
+			}
+			
+			.col a:hover {
+				text-decoration: none;
+				color: #fff;
+			}
+			/*怎样去掉悬停时的下划线*/
+			
+			.col a {
+				color: #fff
+			}
+			
+			.font {
+				
+				text-align: center;
+				font-family: "微软雅黑";
+				
+			}
+			
+			.button {
+				/*display:table;*/
+				border-radius: 2%;
+				border: 2% solid #666;
+				width: 20%;
+				height:5%;
+				/*宽度*/
+				position: relative;
+				left: 20%;
+				font-size: 15px;
+				font-family: "微软雅黑";
+				background-color: white;
+				color: #666;
+				/*使圆点消失*/
+				padding: 1% 1%;
+				text-align: center;
+				/*为什么不管用*/
+				text-decoration: none;
+				display: inline-block;
+				
+				margin: 6% 0;
+				/*设置按钮间距*/
+				cursor: pointer;
+				-webkit-transition-duration: 0.4s;
+				/* Safari */
+				transition-duration: 0.4s;
+			}
+			
+			.button:hover {
+				background-color: #000;
+				color: white;
+				border:2% solid #000000;
+			}
+			
+			.banner1{
+				position:absolute; 
+				margin:auto; 
+				left:20%;
+				top:130% ;
+			text-shadow: 2px 2px 2px #FF0033;
+			 text-align:center;
+			  font-size:30px;
+			   font-family:'微软雅黑'; color:#666;
+			}
+			/*========================================================================*/
+		</style>
+	</head>
+
+	<body>
+		<!--<a id="top"></a>-->
+       <!--导航begin-->
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+				            <span class="sr-only">切换导航</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+							<a class="navbar-brand" href="#" style="color: white;">图灵摄影</a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav navbar-right">
+
+								<li>
+									<a href="#">Turing主页</a>
+								</li>
+								<li>
+									<a href="#">摄影服务</a>
+								</li>
+								<li>
+									<a href="#">线上商城</a>
+								</li>
+								<li>
+									<a href="#">影像画廊 </a>
+								</li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										个人中心 <b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal001">
+												</span>登录</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="#" data-toggle="modal" data-target="#myModal002">
+												</span>注册</a>
+										</li>
+
+										<li class="divider"></li>
+										<li>
+											<a href="#">帮助？</a>
+										</li>
+
+									</ul>
+								</li>
+								<li><img src="../img/logo.png" style="width: 50px;height: 50px;border-radius: 50%;"></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--导航end-->
+
+  
+  
+		<div class="container-fluid contentback ">
+			<div>
+				<!--子导航-->
+				<div class="  button .button:hover col  content1" style="">
+
+					<a  href="#企业宣传摄影">企业宣传摄影</a>
+
+				</div>
+				<div class="button .button:hover col content1">
+
+					<a href="#人物写真" >人物写真</a>
+
+				</div>
+				<div class="button .button:hover col content1">
+
+					<a href="#产品摄影" >产品摄影</a>
+
+				</div>
+			</div>
+			
+			<!--*背景图*/-->
+			<!--<div style="height:100px"></div>-->
+
+			<!--<img cl-ass="img" src="../img/background.png" />-->
+			<div class="container ">
+
+				<div class="row">
+					<div class="center ">
+						<table class="table-hover" style=" margin:auto;border:3px solid #666; white-space: nowrap;  border-collapse:separate;
+    border-spacing:1px ;width=100%;">
+							<caption style="text-shadow: 2px 2px 2px #FF0033; text-align:center; font-size:30px;">
+								服务价目表</caption>
+							<thead>
+								<tr style="font-family:'微软雅黑'; font-size: 30px; 
+									color: #ff6600; background-color:#666">
+									<th>选购</th>
+									<th>服务类型</th>
+									<th>产品编号</th>
+									<th>价目/元</th>
+									<th>备注</th>
+
+								</tr>
+							</thead>
+							<tbody style="font-family:'微软雅黑'; font-size: 18px;">
+								<tr>
+									<td><input type="checkbox" checked="checked" style="height: 18px;
+    width: 18px;"></td>
+									<td rowspan="2">企业活动摄影</td>
+									<td>#01</td>
+									<td>1，999</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" checked="checked" style="height: 18px;
+    width: 18px;"></td>
+
+									<td>#02</td>
+									<td>1，999</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" checked="checked" style="height: 18px;
+    width: 18px;"></td>
+									<td>人物写真</td>
+									<td>#03</td>
+
+									<td>1，999</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td><input type="checkbox" checked="checked" style="height: 18px;
+    width: 18px;"></td>
+									<td>产品摄影</td>
+									<td>#04</td>
+
+									<td>1，999</td>
+									<td></td>
+								</tr>
+							</tbody>
+							<tfoot>
+
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+
+<!--table========================================================================================================-->
+			
+<!--=====================================================================================================				
+				<!--banner-begin-->
+		<div class="container-fluid myBanner banner1 center" >
+			<div  class="desc">
+				    成果展示
+					
+				</div>
+			<div class="row">
+				<div id="myCarousel" class="carousel slide">
+					<!-- 轮播（Carousel）指标 -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+					<!-- 轮播（Carousel）项目 -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="../img/company.jpg"First slide" style="border-radius: 5px;">
+						</div>
+						<div class="item">
+							<img src="../img/product.jpg" alt="Second slide style=" display: block;
+    margin: auto; width: 40%; height:40%; border-radius: 5px;">
+						</div>
+						<div class="item">
+							<img src="../img/awesome_dayana_women_04.jpg" alt="Third slide" style="border-radius: 5px;">
+						</div>
+					</div>
+					<!-- 轮播（Carousel）导航 -->
+					<a class="carousel-control left" href="#myCarousel" data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></a>
+					<a class="carousel-control right" href="#myCarousel" data-slide="next"><span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+
+			</div>
+		</div>
+		<!--banner - end-->
+
+				 <!--图片模态框-->
+<div class="container-fluid" style="position:absolute; top:250%; ">
+				<!--z怎样设底距离-->
+				<!--<img src="../img/company.jpg" class="img-responsive" alt="企业活动宣传" style="border:5px solid #666 ;width:180 ; height:180 ;">-->
+				<h2  >
+					<li  class="desc" ">企业宣传摄影</li>
+					<a name="企业宣传摄影" ></a>
+					
+				</h2>
+					
+
+					<img  id="myImg1" class="img-thumbnail img-responsive imgalbum " src="../img/company.jpg" alt="企业文化宣传"
+						<!-- style="left:10%;width=50% height=30% ; float:right;"-->
+						  <br />
+                          <br />
+						  <p class="define" <!--style="position:absolute ; left:90%;"-->>
+			                     一种是企业形象片，另一种是产品专题片。前者主要是整合企业资源，统一企业形象，传递信息。<br />
+			                      它可以促进受众对企业的了解，增强信任感，从而带来商机。而产品直销片主要是通过现场实录配合<br />
+			                      三维动画，直观生动地展示产品生产过程、突出产品的功能特点和使用方法。从而让消费者或者经销<br />
+			                      商能够比较深入地了解产品，营造良好的销售环境。企业宣传片的直接用途主要有：促销现场、项目<br />
+			                      洽谈、会展活动、竞标、招商、融资、产品发布会、统一渠道中产品形象及宣传模式等。产品宣传片<br />
+			                      用于电视广告或终端播放等。 
+                   </p>
+						
+					
+                                
+                           <br />
+                          <br />
+                          <br />
+                          <br />
+                           <br />
+                         
+                         <h2  >
+					<li  class="desc" ">人物写真</li>
+					<a name="人物写真" ></a>
+					
+				</h2>
+                             <img id="myImg2 " class="img-thumbnail img-responsive imgalbum " src="../img/awesome_dayana_women_04.jpg "
+                               	 alt="人物写真 "  >    
+                               	  
+                          
+                               	<p class="define" >
+						       在现实生活中由于忙碌的工作，生活的压力，人们一般都忘记了给自己一片空间。非常可惜<br />
+						地错过了展示自己美的一面，一提起个人美的一面，人们就非常不自然，因为他欣赏不到自<br />
+						己的美，也就觉得自己不美。实际上我们所说的美就是一个人从形体和容貌上所表现出的个<br />
+						人特点，这就是美。对于男人的美往往评价为帅，对于女人的美评价为漂亮。但是我们忽略<br />
+						了个性差异上的特点。就感觉个人写真应该是属于那些帅气，漂亮的人，是属于电影明星们<br />
+						的专利。自己又不帅也不美就不要献丑了。实际上你还不懂得所谓写真的真正涵义。真正意<br />
+						义上的写真就是真实的反映自己的真实生活中的样子。
+					</p>
+                               	 
+                          
+                           <br />
+                          <br />
+                          <br />
+                          <br />
+                           <br />
+                          <br />
+                           <br />
+                          
+                          
+                          
+                           <h2 class="desc">
+					<li class="desc">产品摄影</li>
+					<a name="产品摄影"></a>
+				</h2>
+                                  <img id="myImg3 " class="img-thumbnail img-responsive imgalbum " src="../img/product.jpg" 
+                                  	alt="产品摄影 "  >                                                                   <!--这里设style长宽没用-->                                                                           <!--这里设style长宽没用-->
+                           <br />
+                          <br />
+				<p class="define">
+						产品拍摄属于商业产品广告拍摄的一部分，主要是以商品为主要拍摄对象的一种产品拍摄，通<br />
+						过反映商品的形状、结构、性能、色彩和用途等特点，从而引起顾客的购买欲望。产品拍摄是<br />
+						传播商品信息、促进商品流通的重要手段。随着商品经济的不断发展，产品已经不是单纯的商<br />
+						业行为，它已经成为现实生活的一面镜子，成为广告传播的一种重要手段和媒介。产品拍摄是<br />
+						指针对产品而开展的摄影活动，它是商业摄影的一个种类，产品拍摄一直在激烈的市场竞争中<br />
+						起着至关重要的作用，产品拍摄技术也显示出越来越重要的地位，因为受到种种条件的限制，<br />
+						企业往往不可能将产品直接展示给每位消费者，这时我们就不得不拿起相机将这些产品拍照成<br />
+						摄图片，借助各种传媒使产品走进众多消费者的心中。而如果在拍摄过程中操作不当，可能会<br />
+						使产品的图像相当难看，甚至丧失产品原有的风采，这样毫无疑问会直接影响到产品的市场销<br />
+						售。完美的产品设计会在拍照过程中使产品图像相当耐看，而良好的产品拍摄技术又会使得产<br />
+						品图像锦上添花，所以这两项工作一直都在相互渗透着发展。
+					</p>
+                           <br />
+                          <br />
+                          <br />
+                          <br />
+                           <br />
+                          <br />
+							
+
+          
+							<!-- The Modal -->
+<div id="myModal1 " class="modal ">
+	<span class="close ">×</span>
+	<img class="modal-content " id="img01 ">
+	<div id="caption1 "></div>
+</div>
+<div id="myModal2 " class="modal ">
+	<span class="close ">×</span>
+	<img class="modal-content " id="img02 ">
+	<div id="caption2 "></div>
+</div>
+<div id="myModal3 " class="modal ">
+	<span class="close ">×</span>
+	<img class="modal-content " id="img03 ">
+	<div id="caption3"></div>
+</div>
+
+<!--引入jquery-->
+<script type="text/javascript " src="../plugins/jquery/jquery.min.js "></script>
+<!--引入bootstrap.js-->
+<script type="text/javascript " src="../plugins/bootstrap/js/bootstrap.js "></script>
+<script>
+	// 获取模态窗口
+	var modal = document.getElementById('myModal1');
+
+	// 获取图片模态框，alt 属性作为图片弹出中文本描述
+	var img = document.getElementById('myImg1');
+	var modalImg = document.getElementById("img01 ");
+	var captionText = document.getElementById("caption1 ");
+	img.onclick = function() {
+		modal.style.display = "block ";
+		modalImg.src = this.src;
+		modalImg.alt = this.alt;
+		captionText.innerHTML = this.alt;
+	}
+	// 获取模态窗口
+	var modal = document.getElementById('myModa2');
+
+	// 获取图片模态框，alt 属性作为图片弹出中文本描述
+	var img = document.getElementById('myImg2');
+	var modalImg = document.getElementById("img02 ");
+	var captionText = document.getElementById("caption2 ");
+	img.onclick = function() {
+		modal.style.display = "block ";
+		modalImg.src = this.src;
+		modalImg.alt = this.alt;
+		captionText.innerHTML = this.alt;
+	}
+	// 获取模态窗口
+	var modal = document.getElementById('myModal3');
+
+	// 获取图片模态框，alt 属性作为图片弹出中文本描述
+	var img = document.getElementById('myImg3');
+	var modalImg = document.getElementById("img03 ");
+	var captionText = document.getElementById("caption3 ");
+	img.onclick = function() {
+		modal.style.display = "block ";
+		modalImg.src = this.src;
+		modalImg.alt = this.alt;
+		captionText.innerHTML = this.alt;
+	}
+
+	// 获取 <span> 元素，设置关闭模态框按钮
+	var span = document.getElementsByClassName("close ")[0];
+
+	// 点击 <span> 元素上的 (x), 关闭模态框
+	span.onclick = function() {
+		modal.style.display = "none ";
+	}
+</script>
+
+         
+
+<!--引入jquery-->
+<script type="text/javascript " src="../plugins/jquery/jquery.min.js "></script>
+<!--引入bootstrap.js-->
+<script type="text/javascript " src="../plugins/bootstrap/js/bootstrap.js "></script>
+	<script>
+			$(function() {
+				$('#myCarousel').carousel({
+					interval: 2000
+				})
+			});
+		</script>
+		</div>
+</body>
+
+</html>
